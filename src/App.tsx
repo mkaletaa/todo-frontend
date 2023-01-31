@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Form from './components/Form';
 import { Button } from '@mui/material';
-import './app.css'
+import css from './app.module.css'
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -18,10 +18,14 @@ function App() {
        });
   }
 
-
+  type Task = {
+    id: any,
+    name: string,
+    description: string
+  }
 
   return (
-    <div className="App flex" >
+    <div className="flex" >
 
       <Form/>
 
@@ -30,7 +34,7 @@ function App() {
             color="success"
             onClick={e=>getTasks()}>Get tasks</Button>
 
-        {tasks.map((task: {id:any, name:string, description:string}) => (
+        {tasks.map((task: Task) => (
                 <div key={task.id}>
                   <div>{task.name}, {task.description}</div>
                 </div>
