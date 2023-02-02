@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { Button, Card, Paper } from '@mui/material';
-import css from './app.module.css'
+import axios from 'axios';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 type Task = {
   id: any,
@@ -24,6 +25,18 @@ function Tasks({getTasks, tasks}: TaskProps) {
     useEffect(()=>{
         getTasks()
     }, [])
+
+    function deleteTask(e: any){
+      console.log(e)
+      axios.delete(`http://localhost:8080/tasks/id/${e}`)
+    .then(response => {
+      console.log(response.status);
+      getTasks()
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+    }
     
 
   return (
@@ -37,7 +50,11 @@ function Tasks({getTasks, tasks}: TaskProps) {
 
         {tasks.map((task: Task) => (
                 <Card sx={{padding: '5px'}} key={task.id}>
-                  <b className='name'>{task.name}</b>
+                  <div className='header'>
+                    <b className='name'>{task.name}</b>
+                    <DeleteForeverIcon className='trash'
+                     onClick={e=>deleteTask(task.id)}/>
+                  </div>
                   <div className='description'>{task.description}</div>
                 </Card>
               ))}

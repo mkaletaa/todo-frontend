@@ -21,14 +21,31 @@
     margin-top: 50px;
   }
 
-.name{
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  /* font-weight: 600; */
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .trash{
+    cursor: pointer;
+    transition: .2s;
+  }
+  
+  .trash:hover{
+    color: tomato
+  }
+  
+  .name{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-break: break-word;
+    hyphens: auto
 }
 
 .description{
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
+  word-break: break-word;
+  hyphens: auto
 }
 
