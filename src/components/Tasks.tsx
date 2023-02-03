@@ -48,10 +48,10 @@ function Tasks({getTasks, tasks}: TaskProps) {
             color="success"
             onClick={e=>getTasks()}>Refresh</Button>
 
-        {tasks.map((task: Task) => (
+        {tasks.map((task: Task, a:number) => (
                 <Card sx={{padding: '5px'}} key={task.id}>
                   <div className='header'>
-                    <b className='name'>{task.name}</b>
+                    <b className='name'>{tasks.length-a}) {task.name}</b>
                     <DeleteForeverIcon className='trash'
                      onClick={e=>deleteTask(task.id)}/>
                   </div>
