@@ -28,9 +28,10 @@ function Tasks({getTasks, tasks}: TaskProps) {
 
     function deleteTask(e: any){
       console.log(e)
-      axios.delete(`http://localhost:8080/tasks/id/${e}`)
+      axios.delete(`http://localhost:8080/tasks/${e}`)
     .then(response => {
       console.log(response.status);
+      console.log(e)
       getTasks()
     })
     .catch(error => {
