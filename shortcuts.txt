@@ -1,0 +1,11 @@
+multicursor - ctrl + LPM
+dodatkowy kursor nad/pod - ctrl + alt + Enter
+zaznaczanie blokowe (myszą) - Shift + alt + Ruch myszką z LPM
+zaznaczanie wielu lini tekstu na raz - Shift + ctrl + strzałki
+skopiowanie lini - Shift + alt + strzałki
+nowa linia - ctrl + Enter
+zmiana miejsca zaznaczonego tekstu (w górę/w dół) - alt + strzałki
+cofnięcie nowego kursora - ctrl + U
+wyszukanie wzystkich powtózeń zaznaczonej frazy - ctrl + Shift + L
+zaznacz kolejnego matcha - ctrl + D
+wyszkanie frazy w całym projekcie - Shift + ctrl + F
